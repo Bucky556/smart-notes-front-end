@@ -22,7 +22,7 @@ function getNoteById(id) {
         window.location.href = "./login.html";
     }
 
-    fetch("http://localhost:8080/note/api/v1/by/id/" + id, {
+    fetch("http://localhost:8080/note/api/v1/" + id, {
         method: 'GET',
         headers: {
             'Content-Type': 'application/json',
