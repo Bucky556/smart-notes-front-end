@@ -1,0 +1,98 @@
+.note-details-container {
+    display: flex;
+    justify-content: center;
+    align-items: center; /* markazda joylashtiradi */
+    min-height: 100vh; /* butun ekran balandligini oladi */
+    background-color: #f9f9f9; /* fonni yumshoq oq qilib qo‘ying */
+    padding: 20px;
+}
+
+
+.note-box {
+    width: 600px;
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    padding: 25px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.note-title {
+    font-size: 22px;
+    font-weight: bold;
+    border: none;
+    outline: none;
+    width: 100%;
+    color: #6c63ff;
+    border-bottom: 2px solid transparent;
+}
+
+.note-title:focus {
+    border-bottom: 2px solid #6c63ff;
+}
+
+.note-content {
+    height: 300px;
+    border: none;
+    outline: none;
+    resize: none;
+    font-size: 16px;
+    line-height: 1.6;
+    color: #444;
+    border-left: 3px solid transparent;
+}
+
+.note-content:focus {
+    border-left: 3px solid #6c63ff;
+}
+
+.actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+}
+
+.actions button {
+    padding: 8px 16px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.edit-btn {
+    background-color: #6c63ff;
+    color: white;
+}
+
+.save-btn {
+    background-color: #4caf50;
+    color: white;
+}
+
+.cancel-btn {
+    background-color: #ff5555;
+    color: white;
+}
+
+.actions button:hover {
+    opacity: 0.9;
+}
+.note-box {
+    animation: fadeIn 0.5s ease-in-out;
+}
+
+@keyframes fadeIn {
+    from {opacity: 0; transform: translateY(-10px);}
+    to {opacity: 1; transform: translateY(0);}
+}
+
+/* sana o‘ng tepadan kichik, yumshoq rangda chiqadi */
+.note-date {
+    font-size: 14px;
+    color: #888;
+    margin: 0;
+    text-align: right;
+}

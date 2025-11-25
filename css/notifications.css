@@ -1,0 +1,95 @@
+.notifications-wrapper {
+    max-width: 900px;
+    margin: 120px auto 40px;
+    padding: 0 20px;
+}
+
+.notifications-title {
+    font-size: 32px;
+    color: #6c63ff;
+    text-align: center;
+    margin-bottom: 30px;
+    font-weight: 600;
+}
+
+#notificationsContainer {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+/* Notification Card */
+.notification-card {
+    position: relative;
+    background-color: #fff;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+    padding: 18px 20px 18px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: all 0.3s ease;
+}
+
+.notification-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.12);
+}
+
+/* Message text */
+.notification-message {
+    font-size: 16px;
+    color: #333;
+    flex: 1;
+    margin-right: 10px;
+    word-break: break-word;
+}
+
+/* Date */
+.notification-date {
+    font-size: 13px;
+    color: #999;
+    margin-right: 15px;
+}
+
+/* Close button */
+.notification-close {
+    background: #ff4a4a;
+    border: none;
+    color: #fff;
+    font-size: 18px;
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background 0.2s ease;
+}
+
+.notification-close:hover {
+    background: #e03e3e;
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+    .notification-card {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 15px;
+    }
+
+    .notification-message {
+        margin-bottom: 8px;
+    }
+
+    .notification-date {
+        margin-right: 0;
+        margin-bottom: 8px;
+    }
+
+    .notification-close {
+        align-self: flex-end;
+    }
+}

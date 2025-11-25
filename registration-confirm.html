@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Register Confirm</title>
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="./css/pop-up.css">
+</head>
+<body>
+
+<!-- Popup Container -->
+<div id="popup-container"></div>
+
+<div class="auth_container">
+    <h2 class="auth_title">Verify Your Email</h2>
+    <p class="auth_text">Enter the 4-digit code sent to your email.</p>
+
+    <form class="auth_form" id="verify_form">
+        <label class="auth_label">Verification Code</label>
+        <input type="text" class="auth_input" id="code" placeholder="Enter 4-digit code" maxlength="4" required>
+
+        <button type="submit" class="auth_btn">Verify</button>
+    </form>
+
+    <div class="auth_text" style="margin-top: 12px;">
+        Didn't receive code? <a href="" onclick="resendCode(event)" class="auth_link">Resend</a>
+    </div>
+</div>
+
+<script src="./js/pop-up.js"></script>
+<script src="./js/registration-confirm.js"></script>
+<script>
+    document.getElementById("verify_form").addEventListener("submit", verifyCode);
+</script>
+</body>
+</html>

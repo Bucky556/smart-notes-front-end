@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="./css/global.css">
+    <link rel="stylesheet" href="./css/dashboard.css">
+    <link rel="stylesheet" href="./css/notifications.css">
+    <link rel="stylesheet" href="./css/pop-up.css">
+    <title>Notifications</title>
+</head>
+<body>
+<!-- Popup Container -->
+<div id="popup-container"></div>
+
+<nav class="navbar">
+    <div class="nav-left">
+        <h2 class="logo">SmartNotes</h2>
+    </div>
+    <ul class="nav-links">
+        <li><a href="./create.html" id="newNoteBtn">Create New Note</a></li>
+        <li><a href="./myNotes.html" id="myNotesBtn">My Notes</a></li>
+        <li><a href="./favorites.html" id="favoritesBtn">Favorites</a></li>
+        <li><a href="./notifications.html">Notifications
+            <span id="notifBadge"></span>
+        </a></li>
+        <li><a href="./admin-profile.html" class="adminPageBtn securityRequired">Admin Profile</a></li>
+    </ul>
+
+    <div class="profile-menu">
+        <div class="menu-icon" id="menuBtn">&#9776;</div>
+        <div class="dropdown" id="dropdownMenu">
+            <img src="./images/default-user.png" id="userPhoto" alt="User" class="avatar">
+            <p class="name" id="username">John Doe</p>
+            <p class="email" id="userEmail">john.doe@gmail.com</p>
+            <hr>
+            <a href="profile-settings.html" class="dropdown-item" id="settingsBtn">Settings</a>
+            <a href="#" class="dropdown-item logout" id="logoutBtn">Logout</a>
+        </div>
+    </div>
+</nav>
+
+<main class="notifications-wrapper">
+    <h1 class="notifications-title">Your Notifications</h1>
+    <div id="notificationsContainer">
+        <!-- JS orqali notification kartalari shu yerga keladi -->
+        <!--<div class="notification-card">
+            <p class="notification-message">New note created: Shopping List</p>
+            <button class="notification-close">&times;</button>
+        </div>-->
+    </div>
+</main>
+
+<script src="js/notifications.js"></script>
+<script src="./js/dashboard.js"></script>
+<script src="js/profile-image.js"></script>
+<script src="./js/security.js"></script>
+<script src="./js/main.js"></script>
+<script src="./js/pop-up.js"></script>
+</body>
+</html>

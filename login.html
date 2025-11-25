@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+<body>
+<div class="auth_container">
+    <h1 class="auth_title">Welcome Back</h1>
+    <form class="auth_form" id="login_form">
+        <label class="auth_label" for="email">Email</label>
+        <input type="email" id="email" class="auth_input" placeholder="Enter your email">
+        <span class="error-text" id="emailErrorSpan">Required input</span>
+
+        <label class="auth_label" for="password">Password</label>
+        <input type="password" id="password" class="auth_input" placeholder="Enter your password">
+        <span class="error-text" id="passwordErrorSpan">Required input</span>
+
+        <button type="submit" class="auth_btn" onclick="login(event)">Login</button>
+    </form>
+
+    <!-- Forgot Password -->
+    <div class="auth_text" style="margin-top: 12px;">
+        <a href="reset-password.html" class="auth_link">Forgot Password?</a>
+    </div>
+
+    <!-- Register link -->
+    <p class="auth_text">
+        Don’t have an account? <a href="registration.html" class="auth_link">Register</a>
+    </p>
+</div>
+
+<script src="./js/login.js"></script>
+</body>
+</html>

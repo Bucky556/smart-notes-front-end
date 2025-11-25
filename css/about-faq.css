@@ -1,0 +1,122 @@
+/* ----------------- Header Links ----------------- */
+.header_link {
+    margin-right: 15px;
+    font-weight: 500;
+    color: #333;
+    text-decoration: none;
+    padding: 6px 10px;
+    border-radius: 6px;
+    transition: background 0.2s ease, color 0.2s ease;
+}
+
+.header_link:hover {
+    background: #f0f0f0;
+    color: #6e8efb;
+}
+
+/* ----------------- FAQ Page ----------------- */
+.faq_page {
+    padding: 120px 20px 60px 20px; /* header uchun joy */
+    background: #f9f9fb;
+    min-height: 100vh;
+    color: #333;
+}
+
+.faq_page .container {
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+.faq_page h1 {
+    font-size: 32px;
+    margin-bottom: 30px;
+    text-align: center;
+    color: #6e8efb;
+}
+
+.faq_item {
+    margin-bottom: 15px;
+    border-radius: 10px;
+    background: #fff;
+    border: 1px solid #e0e0e0;
+    overflow: hidden;
+    transition: all 0.3s ease;
+}
+
+.faq_item:hover {
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+}
+
+.faq_question {
+    width: 100%;
+    text-align: left;
+    padding: 14px 16px;
+    font-size: 16px;
+    font-weight: 600;
+    color: #333;
+    border: none;
+    background: none;
+    cursor: pointer;
+}
+
+.faq_question:hover {
+    background: #f5f5f5;
+}
+
+.faq_answer {
+    padding: 0 16px 14px 16px;
+    display: none;
+    font-size: 14px;
+    color: #555;
+}
+
+/* Toggle active holatida ko‘rinadi */
+.faq_item.active .faq_answer {
+    display: block;
+}
+
+/* ----------------- About Page ----------------- */
+.about_page {
+    padding: 120px 20px 60px 20px;
+    background: #ffffff;
+    min-height: 100vh;
+    color: #333;
+}
+
+.about_page .container {
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+.about_page h1 {
+    font-size: 32px;
+    margin-bottom: 20px;
+    text-align: center;
+    color: #a777e3;
+}
+
+.about_page h2 {
+    font-size: 22px;
+    margin-top: 25px;
+    margin-bottom: 10px;
+    color: #6e8efb;
+}
+
+.about_page p {
+    font-size: 15px;
+    line-height: 1.6;
+    margin-bottom: 12px;
+    color: #444;
+}
+
+.about_page ul {
+    margin-left: 20px;
+    list-style: disc;
+    color: #444;
+}
+
+.about_page ul li {
+    margin-bottom: 8px;
+}
+
+

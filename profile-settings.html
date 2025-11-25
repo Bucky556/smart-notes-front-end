@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Settings</title>
+    <link rel="stylesheet" href="./css/profile-settings.css">
+    <link rel="stylesheet" href="./css/simple-modal.css">
+    <link rel="stylesheet" href="./css/global.css">
+</head>
+<body>
+
+<section class="settings-container">
+    <button class="back-btn" id="backBtn">← Back</button>
+    <h1>Profile Settings</h1>
+
+    <!-- Update Photo -->
+    <div class="settings-block">
+        <h3>Profile Photo</h3>
+
+        <!-- Avatar container -->
+        <div class="photo-container" id="photoContainer">
+            <img id="profilePhoto" src="./images/default-user.png" alt="Profile photo">
+            <div class="photo-overlay" id="photoOverlay" onclick="triggerFileInput()">+</div>
+        </div>
+
+        <input type="file" id="photoInput" accept="image/*" onchange="previewImage(event)" hidden>
+        <button id="savePhotoBtn" class="btn btn-primary display-none" onclick="uploadImage()">Save Changes</button>
+        <span id="photoMessage" class="photo-message"></span>
+    </div>
+
+    <!-- Update Name -->
+    <div class="settings-block">
+        <h3>Update Name</h3>
+        <div class="settings-input-group">
+            <label for="nameInput">Full Name</label>
+            <input type="text" id="nameInput" placeholder="Enter new name">
+        </div>
+        <span id="trueNameMessageSpan" class="trueMessage"></span>
+        <button id="updateNameBtn" class="settings-btn" onclick="updateName()">Update Name</button>
+    </div>
+
+    <!-- Update Password -->
+    <div class="settings-block">
+        <h3>Change Password</h3>
+        <div class="settings-input-group">
+            <label for="oldPassword">Old Password</label>
+            <input type="password" id="oldPassword" placeholder="Enter old password">
+            <span id="ErrorCurrentPasswordMessageSpan" class="errorMessage"></span>
+        </div>
+        <div class="settings-input-group">
+            <label for="newPassword">New Password</label>
+            <input type="password" id="newPassword" placeholder="Enter new password">
+            <span id="truePasswordMessageSpan" class="trueMessage"></span>
+        </div>
+        <button id="updatePasswordBtn" class="settings-btn danger" onclick="updatePassword()">Change Password</button>
+    </div>
+
+    <!-- Update Username -->
+    <div class="settings-block">
+        <h3>Update Username</h3>
+        <div class="settings-input-group">
+            <label for="usernameInput">Username</label>
+            <input type="text" id="usernameInput" placeholder="Enter new username">
+            <span id="trueUsernameMessageSpan" class="trueMessage"></span>
+            <span id="ErrorUsernameMessageSpan" class="errorMessage"></span>
+        </div>
+        <button id="updateUsernameBtn" class="settings-btn" onclick="updateUsername()">Update Username</button>
+    </div>
+
+    <!-- Modal start -->
+    <div id="simpleModalId" class="simple-modal" role="dialog" aria-labelledby="confirmModalTitle" aria-modal="true">
+        <div class="simple-modal-content">
+            <div class="simple-modal-header">
+                <h3 id="confirmModalTitle">Confirm Username Change</h3>
+                <button class="close" onclick="closeModal()" aria-label="Close">&times;</button>
+            </div>
+            <div class="simple-modal-body">
+                <p id="confirmModalResultId" style="color: #0e7c12">Message</p>
+                <label for="profileUserNameChaneConfirmInputId">Enter Confirmation Code</label>
+                <input type="text" class="form_input" id="profileUserNameChaneConfirmInputId"
+                       aria-describedby="ErrorCodeSpan"/>
+                <span id="ErrorCodeSpan" class="errorMessage"></span>
+            </div>
+            <div class="simple-modal-footer">
+                <button class="btn btn-close" onclick="closeModal()">Close</button>
+                <button class="btn btn-primary" onclick="updateUsernameConfirm()">Confirm</button>
+            </div>
+        </div>
+    </div>
+    <!-- Modal end -->
+
+</section>
+
+
+<script src="./js/profile-settings.js"></script>
+
+</body>
+</html>

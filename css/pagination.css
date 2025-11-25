@@ -1,0 +1,115 @@
+.pagination {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 30px auto;
+    padding: 20px 0;
+}
+
+.pagination-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: nowrap;
+    gap: 8px;
+}
+
+.pagination_block {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 6px;
+}
+
+.pagination_btn__box {
+    display: flex;
+}
+
+.pagination_btn {
+    background-color: #ffffff;
+    color: #333;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 8px 14px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: all 0.25s ease;
+}
+
+.pagination_btn:hover {
+    background-color: #f2f2f2;
+    border-color: #bbb;
+}
+
+.pagination_active {
+    background-color: #007bff;
+    color: white;
+    border: 1px solid #007bff;
+    border-radius: 8px;
+    padding: 8px 14px;
+    font-weight: bold;
+    cursor: default;
+}
+
+.pagination-back,
+.pagination-forward {
+    font-weight: 600;
+    color: #007bff;
+    border: 1px solid #007bff;
+}
+
+.pagination-back:hover,
+.pagination-forward:hover {
+    background-color: #007bff;
+    color: #fff;
+}
+
+.pagination_btn_dots {
+    background: none;
+    border: none;
+    color: #888;
+    cursor: default;
+    font-size: 16px;
+    padding: 8px 10px;
+}
+
+@media (max-width: 600px) {
+    .pagination-wrapper {
+        gap: 4px;
+        flex-wrap: wrap;
+    }
+
+    .pagination_btn,
+    .pagination_active {
+        padding: 6px 10px;
+        font-size: 13px;
+    }
+
+    .pagination-back,
+    .pagination-forward {
+        font-size: 13px;
+        padding: 6px 10px;
+    }
+}
+
+#paginationSection button {
+    background-color: #6c63ff;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    padding: 8px 14px;
+    margin: 0 5px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: all 0.2s ease;
+}
+
+#paginationSection button:hover {
+    background-color: #534de1;
+}
+
+#paginationSection button:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+}
+

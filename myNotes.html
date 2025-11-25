@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>My Notes</title>
+    <link rel="stylesheet" href="./css/global.css">
+    <link rel="stylesheet" href="./css/dashboard.css">
+    <link rel="stylesheet" href="./css/myNotes.css">
+    <link rel="stylesheet" href="./css/pop-up.css">
+    <link rel="stylesheet" href="./css/pagination.css">
+</head>
+<body>
+
+<!-- Popup Container -->
+<div id="popup-container"></div>
+
+<nav class="navbar">
+    <h2 class="logo">SmartNotes</h2>
+    <ul class="nav-links">
+        <li><a href="./create.html" id="newNoteBtn">Create New Note</a></li>
+        <li><a href="./myNotes.html" id="myNotesBtn">My Notes</a></li>
+        <li><a href="./favorites.html" id="favoritesBtn">Favorites</a></li>
+        <li><a href="./notifications.html">Notifications
+            <span id="notifBadge"></span>
+        </a></li>
+        <li><a href="./admin-profile.html" class="adminPageBtn securityRequired">Admin Profile</a></li>
+    </ul>
+
+    <div class="profile-menu">
+        <div class="menu-icon" id="menuBtn">&#9776;</div>
+        <div class="dropdown" id="dropdownMenu">
+            <img src="./images/default-user.png" id="userPhoto" alt="User" class="avatar">
+            <p class="name" id="username">John Doe</p>
+            <p class="email" id="userEmail">john.doe@gmail.com</p>
+            <hr>
+            <a href="profile-settings.html" class="dropdown-item" id="settingsBtn">Settings</a>
+            <a href="#" class="dropdown-item logout" id="logoutBtn">Logout</a>
+        </div>
+    </div>
+</nav>
+
+
+<section class="dashboard-container">
+    <!-- Filters -->
+    <div class="filters">
+        <input type="text" id="searchTitle" placeholder="Search (title)">
+        <button id="searchBtn" onclick="getNote()">Search</button>
+    </div>
+
+    <h1>My Notes</h1>
+    <div id="myNotesContainer" class="notes-container">
+        <!--<div class="note-card">
+            <a href="./note-detail.html">
+                <h3>Note Title 1</h3>
+                <div class="note-dates">
+                    <p class="reminder-date">⏰ 2025-10-15</p>
+                </div>
+                <div class="note-actions">
+                    <button class="delete-btn" onclick="deleteNote(event)">Delete</button>
+                    <button class="favorite-btn" type="button" onclick="changeFav(event)">♥</button>
+                </div>
+            </a>
+        </div>-->
+    </div>
+
+    <!-- Pagination -->
+    <div class="pagination" id="paginationSection">
+        <button id="prevPageBtn">Prev</button>
+        <span id="currentPage">1</span>
+        <button id="nextPageBtn">Next</button>
+    </div>
+
+</section>
+
+<script src="./js/dashboard.js"></script>
+<script src="./js/myNotes.js"></script>
+<script src="./js/main.js"></script>
+<script src="./js/pop-up.js"></script>
+<script src="js/profile-image.js"></script>
+<script src="./js/security.js"></script>
+<script src="./js/notification-badge.js"></script>
+</body>
+</html>

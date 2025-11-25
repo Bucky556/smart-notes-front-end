@@ -1,0 +1,217 @@
+body {
+    background-color: #f9f9f9;
+    font-family: "Poppins", sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+.dashboard-container h1 {
+    text-align: center;
+    color: #6c63ff;
+    margin-bottom: 40px;
+    font-size: 32px;
+    letter-spacing: 1px;
+}
+
+.notes-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 25px;
+}
+
+.note-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.12);
+}
+
+.note-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 10px;
+}
+
+/* Title */
+.note-title {
+    font-size: 20px;
+    font-weight: 600;
+    color: #6c63ff;
+    margin: 0;
+    word-break: break-word;
+}
+
+/* Date */
+.note-date {
+    font-size: 13px;
+    color: #999;
+    margin: 0;
+}
+
+/* Content preview */
+.note-content {
+    font-size: 15px;
+    color: #444;
+    margin: 10px 0 20px;
+    line-height: 1.6;
+    max-height: 100px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.actions {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.favorite-icon {
+    color: #ff6666;
+    font-size: 22px;
+    cursor: pointer;
+    transition: transform 0.2s ease;
+}
+
+.favorite-icon:hover {
+    transform: scale(1.2);
+}
+
+/* “View Detail” button*/
+.view-btn {
+    background-color: #6c63ff;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    padding: 8px 14px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: background-color 0.2s ease;
+}
+
+.view-btn:hover {
+    background-color: #5a55e3;
+}
+
+.favorite-btn {
+    background-color: #f0f0f0;
+    color: #444;
+    font-size: 16px;
+    border-radius: 6px;
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.favorite-btn.active {
+    color: #e74c3c;
+}
+
+/* FAVOURITES PAGE LAYOUT */
+.favorites-wrapper {
+    max-width: 1200px;
+    margin: 120px auto 40px;
+    padding: 0 20px;
+}
+
+/* Title */
+.favorites-title {
+    text-align: center;
+    font-size: 32px;
+    color: #6c63ff;
+    margin-bottom: 30px;
+    font-weight: 600;
+}
+
+/* Notes Grid */
+.notes-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(290px, 1fr));
+    gap: 25px;
+    padding-bottom: 40px;
+}
+
+/* Note Card */
+.note-card {
+    background: #fff;
+    border-radius: 14px;
+    padding: 20px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.10);
+    transition: 0.25s ease;
+    cursor: pointer;
+}
+
+.note-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 10px 18px rgba(0,0,0,0.15);
+}
+
+/* Header */
+.note-header {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+}
+
+.note-title {
+    font-size: 20px;
+    font-weight: 600;
+    color: #6c63ff;
+}
+
+.note-date {
+    font-size: 13px;
+    color: #888;
+}
+
+/* Content */
+.note-content {
+    font-size: 15px;
+    color: #444;
+    margin: 12px 0 20px;
+    max-height: 100px;
+    overflow: hidden;
+    line-height: 1.5;
+}
+
+/* Actions */
+.actions {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* View Button */
+.view-btn {
+    background-color: #6c63ff;
+    border: none;
+    color: white;
+    padding: 8px 14px;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.view-btn:hover {
+    background-color: #534de1;
+}
+
+/* Favorite */
+.favorite-btn {
+    background: #f1f1f1;
+    border: none;
+    font-size: 18px;
+    color: #777;
+    border-radius: 6px;
+    width: 36px;
+    height: 36px;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.favorite-btn:hover {
+    transform: scale(1.15);
+}
+
+.favorite-btn.active {
+    color: #ff4a4a;
+}
+

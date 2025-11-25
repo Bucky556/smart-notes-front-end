@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Create Note</title>
+    <link rel="stylesheet" href="./css/global.css">
+    <link rel="stylesheet" href="./css/dashboard.css">
+    <link rel="stylesheet" href="./css/create.css">
+    <link rel="stylesheet" href="./css/pop-up.css">
+</head>
+<body>
+
+<!-- Popup Container -->
+<div id="popup-container"></div>
+
+<nav class="navbar">
+    <div class="nav-left">
+        <h2 class="logo">SmartNotes</h2>
+    </div>
+    <ul class="nav-links">
+        <li><a href="./create.html" id="newNoteBtn">Create New Note</a></li>
+        <li><a href="./myNotes.html" id="myNotesBtn">My Notes</a></li>
+        <li><a href="./favorites.html" id="favoritesBtn">Favorites</a></li>
+        <li><a href="./notifications.html">Notifications
+            <span id="notifBadge"></span>
+        </a></li>
+        <li><a href="./admin-profile.html" class="adminPageBtn securityRequired">Admin Profile</a></li>
+    </ul>
+
+    <div class="profile-menu">
+        <div class="menu-icon" id="menuBtn">&#9776;</div>
+        <div class="dropdown" id="dropdownMenu">
+            <img src="./images/default-user.png" id="userPhoto" alt="User" class="avatar">
+            <p class="name" id="username">John Doe</p>
+            <p class="email" id="userEmail">john.doe@gmail.com</p>
+            <hr>
+            <a href="#" class="dropdown-item" id="settingsBtn">Settings</a>
+            <a href="#" class="dropdown-item logout" id="logoutBtn">Logout</a>
+        </div>
+    </div>
+</nav>
+
+
+<section class="dashboard-container">
+    <h1>Create New Note</h1>
+    <form id="createNoteForm">
+        <input type="text" placeholder="Title" id="noteTitle" required>
+        <textarea placeholder="Content" id="noteContent" rows="5" required></textarea>
+
+        <div class="reminder-section">
+            <label for="reminderDate">Set Reminder 📌:</label>
+            <input type="datetime-local" id="reminderDate">
+        </div>
+
+        <button type="submit" class="btn" onclick="createNote(event)">Save Note</button>
+    </form>
+</section>
+
+<script src="js/dashboard.js"></script>
+<script src="js/create.js"></script>
+<script src="js/pop-up.js"></script>
+<script src="js/profile-image.js"></script>
+<script src="./js/security.js"></script>
+<script src="./js/notification-badge.js"></script>
+</body>
+</html>

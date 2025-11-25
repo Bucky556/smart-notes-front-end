@@ -1,0 +1,169 @@
+.notes-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 25px;
+    margin-top: 30px;
+}
+
+.note-card {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; /* matn va tugmalarni tarqatadi */
+    min-height: 220px; /* hamma card bir xil balandlikda */
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.12);
+    gap: 15px;
+}
+
+.note-dates {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    font-size: 13px;
+    min-height: 28px; /* reminder bo‘lmasa ham joy saqlaydi */
+}
+
+.note-actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 8px;
+    margin-top: 10px;
+}
+
+.note-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.18);
+}
+
+.note-card h3 {
+    margin: 0;
+    color: #6c63ff;
+    font-size: 20px;
+    word-break: break-word;
+}
+
+.note-dates {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    font-size: 13px;
+}
+
+.note-dates .created-date {
+    color: #555;
+}
+
+.note-dates .reminder-date {
+    color: #ff6b6b;
+    font-weight: 500;
+}
+
+.note-content {
+    font-size: 15px;
+    color: #444;
+    flex-grow: 1;
+    word-break: break-word;
+}
+
+.note-actions {
+    display: flex;
+    justify-content: space-between;
+    gap: 5px;
+}
+
+.note-actions button {
+    padding: 6px 14px;
+    font-size: 13px;
+    border-radius: 6px;
+    border: none;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.delete-btn {
+    background-color: #ff5555;
+    color: white;
+}
+
+.delete-btn:hover {
+    background-color: #e04444;
+}
+
+.favorite-btn {
+    background-color: #f0f0f0; /* tugma fon oq rang */
+    color: #ffffff;             /* yurak boshlang‘ichda oq */
+    font-size: 16px;
+    border-radius: 6px;
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.favorite-btn.active {
+    color: #e74c3c; /* ichidagi yurak qizil bo‘ladi */
+}
+
+.favorite-btn:hover {
+    background-color: #e0e0e0;
+    transform: scale(1.1);
+}
+
+/*filters*/
+.filters {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.filters input,
+.filters select {
+    padding: 8px 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.filters button {
+    padding: 8px 12px;
+    background-color: #5f56da;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.filters button:hover {
+    background-color: #2f3640;
+}
+
+/* Pagination */
+.pagination {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+    gap: 10px;
+}
+
+.pagination button {
+    padding: 5px 10px;
+    background-color: #6c63ff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.pagination button:hover {
+    background-color: #2f3640;
+}
+
+/*SECURITY*/
+.adminPageBtn {
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 22.4px;
+    color: #334155;
+    padding-bottom: 8px;
+}

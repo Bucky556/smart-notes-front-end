@@ -1,0 +1,84 @@
+/* ==== POPUP CONTAINER ==== */
+#popup-container {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 1000;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+
+/* ==== POPUP ELEMENT ==== */
+.popup {
+    background-color: #4CAF50; /* Yashil fon */
+    color: white;
+    padding: 12px 20px;
+    border-radius: 8px;
+    font-size: 15px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    margin-top: 10px;
+    opacity: 0;
+    transform: translateX(100%);
+    animation: slideIn 0.5s forwards;
+}
+
+/* ==== HIDE EFFECT ==== */
+.popup.hide {
+    animation: fadeOut 0.5s forwards;
+}
+
+/* ==== ANIMATIONS ==== */
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateX(100%);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes fadeOut {
+    from {
+        opacity: 1;
+        transform: translateX(0);
+    }
+    to {
+        opacity: 0;
+        transform: translateX(100%);
+    }
+}
+
+/* umumiy popup stili */
+.popup {
+    background-color: #4CAF50; /* default (success) */
+    color: white;
+    padding: 12px 20px;
+    border-radius: 8px;
+    margin-top: 10px;
+    font-weight: bold;
+    text-align: center;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+    transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+/* yashil success */
+.popup.success {
+    background-color: #4CAF50;
+}
+
+/* qizil error */
+.popup.error {
+    background-color: #E53935;
+}
+
+/* fade out effekti */
+.popup.hide {
+    opacity: 0;
+    transform: translateY(-10px);
+}
+
+
+

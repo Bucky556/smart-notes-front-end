@@ -1,0 +1,103 @@
+/* CREATE PAGE STYLE */
+
+/* Sahifani markazga joylash */
+.dashboard-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: calc(100vh - 100px); /* navbarni chiqarib tashlaydi */
+    background: #f8f9fc;
+    padding: 40px 20px;
+}
+
+/* Sarlavha */
+.dashboard-container h1 {
+    font-size: 28px;
+    font-weight: 700;
+    color: #333;
+    margin-bottom: 25px;
+    text-align: center;
+}
+
+/* Forma kartasi */
+#createNoteForm {
+    width: 100%;
+    max-width: 500px;
+    background: #fff;
+    padding: 30px;
+    border-radius: 16px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+/* Input va textarea */
+#createNoteForm input,
+#createNoteForm textarea {
+    width: 100%;
+    padding: 12px 15px;
+    font-size: 15px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    outline: none;
+    resize: none;
+    transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+#createNoteForm input:focus,
+#createNoteForm textarea:focus {
+    border-color: #6c63ff;
+    box-shadow: 0 0 4px rgba(108, 99, 255, 0.3);
+}
+
+/* Tugma */
+#createNoteForm .btn {
+    background: #6c63ff;
+    color: #fff;
+    border: none;
+    padding: 12px;
+    font-size: 16px;
+    font-weight: 600;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background 0.2s, transform 0.1s;
+}
+
+#createNoteForm .btn:hover {
+    background: #5a53e8;
+    transform: scale(1.02);
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+    #createNoteForm {
+        padding: 20px;
+    }
+}
+
+.reminder-section {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    margin-bottom: 10px;
+}
+
+.reminder-section label {
+    font-size: 14px;
+    color: #555;
+}
+
+.reminder-section input[type="date"] {
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    font-size: 15px;
+    outline: none;
+    transition: border-color 0.2s;
+}
+
+.reminder-section input[type="date"]:focus {
+    border-color: #6c63ff;
+}

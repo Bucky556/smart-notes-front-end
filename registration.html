@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register</title>
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="./css/pop-up.css">
+</head>
+<body>
+
+<!-- Popup Container -->
+<div id="popup-container"></div>
+
+<div class="auth_container">
+    <h2 class="auth_title">Create Account</h2>
+    <form class="auth_form" id="registration_form">
+        <label class="auth_label">Name</label>
+        <input type="text" class="auth_input" id="name" placeholder="Enter your name" required>
+
+        <label class="auth_label">Email</label>
+        <input type="email" class="auth_input" id="email" placeholder="Enter your email" required>
+        <span id="errorTextEmail" class="error-text"></span>
+
+        <label class="auth_label">Password</label>
+        <input type="password" class="auth_input" id="password" placeholder="Enter password" required>
+
+
+        <label class="auth_label">Confirm Password</label>
+        <input type="password" class="auth_input" id="confirmPassword" placeholder="Confirm password" required>
+        <span id="errorTextConfirmation" class="error-text"></span>
+
+
+        <button type="submit" class="auth_btn">Register</button>
+    </form>
+    <p class="auth_text">
+        Already have an account?
+        <a href="login.html" class="auth_link">Login</a>
+    </p>
+</div>
+
+<script src="./js/registration.js"></script>
+<script src="./js/pop-up.js"></script>
+</body>
+</html>

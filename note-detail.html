@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Note-Detail</title>
+    <link rel="stylesheet" href="./css/global.css">
+    <link rel="stylesheet" href="./css/noteDetails.css">
+    <link rel="stylesheet" href="./css/dashboard.css">
+</head>
+<body>
+<nav class="navbar">
+    <h2 class="logo">SmartNotes</h2>
+    <ul class="nav-links">
+        <li><a href="./create.html">Create New Note</a></li>
+        <li><a href="./myNotes.html">My Notes</a></li>
+        <li><a href="./favorites.html">Favorites</a></li>
+        <li><a href="./admin-profile.html" class="adminPageBtn securityRequired">Admin Profile</a></li>
+    </ul>
+
+    <!-- Profile menu burchakda -->
+    <div class="profile-menu">
+        <div class="menu-icon" id="menuBtn">&#9776;</div>
+        <div class="dropdown" id="dropdownMenu">
+            <img src="./images/default-user.png" alt="User" class="avatar">
+            <p class="name" id="username">John Doe</p>
+            <p class="email" id="userEmail">john.doe@gmail.com</p>
+            <hr>
+            <a href="#" class="dropdown-item" id="settingsBtn">Settings</a>
+            <a href="#" class="dropdown-item" id="logoutBtn">Logout</a>
+        </div>
+    </div>
+</nav>
+
+<section class="note-details-container" id="note-details-container-id">
+    <div class="note-box">
+        <h1 id="noteTitle" class="note-title-display"></h1>
+        <p id="noteDate" class="note-date"></p>
+        <div id="noteContent" class="note-content-display"></div>
+
+        <div class="actions">
+            <button id="editBtn" class="edit-btn">Edit</button>
+        </div>
+    </div>
+</section>
+
+<script src="./js/noteDetails.js"></script>
+<script src="./js/main.js"></script>
+<script src="./js/dashboard.js"></script>
+<script src="./js/security.js"></script>
+</body>
+</html>

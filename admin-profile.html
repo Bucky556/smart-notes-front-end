@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Admin Profile</title>
+    <link rel="stylesheet" href="./css/admin-profile.css">
+    <link rel="stylesheet" href="./css/global.css">
+    <link rel="stylesheet" href="./css/dashboard.css">
+    <link rel="stylesheet" href="./css/pop-up.css">
+    <link rel="stylesheet" href="./css/pagination.css">
+</head>
+<body>
+
+<nav class="navbar">
+    <h2 class="logo">SmartNotes</h2>
+    <ul class="nav-links">
+        <li><a href="./create.html" id="newNoteBtn">Create New Note</a></li>
+        <li><a href="./myNotes.html">My Notes</a></li>
+        <li><a href="./favorites.html" id="favoritesBtn">Favorites</a></li>
+        <li><a href="./notifications.html">Notifications
+        <li><a href="./admin-profile.html" class="active">Users</a></li>
+            <span id="notifBadge"></span>
+        </a></li>
+    </ul>
+    <div class="profile-menu">
+        <div class="menu-icon" id="menuBtn">&#9776;</div>
+        <div class="dropdown" id="dropdownMenu">
+            <img src="./images/default-user.png" id="userPhoto" alt="User" class="avatar">
+            <p class="name" id="username">John Doe</p>
+            <p class="email" id="userEmail">john.doe@gmail.com</p>
+            <hr>
+            <a href="profile-settings.html" class="dropdown-item" id="settingsBtn">Settings</a>
+            <a href="#" class="dropdown-item logout" id="logoutBtn">Logout</a>
+        </div>
+    </div>
+</nav>
+
+<section class="admin-container">
+    <h1>Admin Panel - Users Management</h1>
+
+    <!-- Filters -->
+    <div class="filters">
+        <input type="text" id="searchNameEmail" placeholder="Search (email/name)">
+        <button id="searchBtn" onclick="getProfile()">Search</button>
+    </div>
+
+    <!-- Users Table -->
+    <table class="admin-table">
+        <thead>
+        <tr>
+            <th>N~</th>
+            <th>Photo</th>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Created Date</th>
+            <th>Status</th>
+            <th>Delete</th>
+        </tr>
+        </thead>
+        <tbody id="profileListContainerId">
+        <tr>
+            <td>1</td>
+            <td>
+                <img src="./images/photo.png" class="userPhoto" alt="Alish">
+            </td>
+            <td>Alish</td>
+            <td>alish@gmail.com</td>
+            <td>01/01/2020</td>
+            <td>
+                <button class="status-btn active">ACTIVE</button>
+            </td>
+            <td>
+                <img src="./images/bin.png" class="table_basket hover-pointer"/>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+
+    <!-- Pagination -->
+    <div class="pagination" id="paginationSection">
+        <button id="prevPageBtn">Prev</button>
+        <span id="currentPage">1</span>
+        <button id="nextPageBtn">Next</button>
+    </div>
+</section>
+
+<!-- Popup Container -->
+<div id="popup-container"></div>
+
+<!-- Notifications -->
+<div id="notification-container"></div>
+
+<script src="./js/admin-profile.js"></script>
+<script src="./js/security.js"></script>
+<script src="./js/main.js"></script>
+<script src="./js/dashboard.js"></script>
+<script src="./js/pop-up.js"></script>
+<script src="js/profile-image.js"></script>
+<script src="js/notification-badge.js"></script>
+</body>
+</html>

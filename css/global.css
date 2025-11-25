@@ -1,0 +1,200 @@
+/* ===============================
+   GLOBAL STYLES
+   =============================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Inter', sans-serif;
+}
+
+body {
+    background-color: #f4f6f9;
+    color: #333;
+    min-height: 100vh;
+}
+
+/* Navbar */
+.navbar {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    height: 60px;
+    background: #6c63ff;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    z-index: 100;
+}
+
+.main-content {
+    padding: 20px 40px;
+}
+
+.top-bar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+/* Navbar ichidagi Back tugma */
+.nav-left {
+    display: flex;
+    align-items: center;
+    gap: 15px; /* logo va back tugma orasidagi masofa */
+}
+
+.back-btn {
+    position: relative; /* fixed o‘rniga relative */
+    top: auto;           /* fixed o‘rnini olib tashlash */
+    left: auto;
+    background-color: #ff4545;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    padding: 6px 12px; /* navbarga moslashtirilgan o‘lcham */
+    font-size: 14px;
+    cursor: pointer;
+    box-shadow: none;  /* navbar ichida shadow keraksiz */
+    z-index: auto;
+    transition: background-color 0.3s ease;
+}
+
+.back-btn:hover {
+    background-color: #a50606;
+}
+
+
+.page-title {
+    flex-grow: 1;
+    text-align: center;
+    margin: 0;
+    color: #222;
+}
+
+.notes-container {
+    margin-top: 180px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+}
+
+.navbar .logo {
+    font-size: 22px;
+    font-weight: 600;
+}
+
+.nav-links {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.nav-links a {
+    color: white;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.nav-links a:hover {
+    opacity: 0.8;
+}
+
+/* Profile menu */
+.profile-menu {
+    position: relative;
+}
+
+.menu-icon {
+    font-size: 24px;
+    cursor: pointer;
+}
+
+.dropdown {
+    display: none;
+    position: absolute;
+    top: 60px;
+    right: 0;
+    width: 220px;
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+    padding: 15px;
+    z-index: 1000;
+}
+
+.dropdown.active {
+    display: block;
+}
+
+.dropdown .avatar {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    display: block;
+    margin: 0 auto 10px auto;
+}
+
+.dropdown .name {
+    font-size: 16px;
+    font-weight: 600;
+    text-align: center;
+    color: #333;
+}
+
+.dropdown .email {
+    font-size: 13px;
+    color: #555;
+    text-align: center;
+    margin-top: 4px;
+}
+
+.dropdown-item {
+    display: block;
+    padding: 8px 0;
+    text-decoration: none;
+    color: #333;
+    text-align: center;
+}
+
+.dropdown-item:hover {
+    color: #6c63ff;
+}
+
+.dropdown-item.logout {
+    color: white;
+    background-color: #ff5555;
+    border-radius: 6px;
+    margin-top: 8px;
+}
+
+.dashboard-container {
+    padding-top: 100px; /* navbar balandligi + margin */
+    width: 90%;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+#notifBadge {
+    display: none;
+    padding: 2px 6px;
+    background: red;
+    border-radius: 12px;
+    color: white;
+    font-size: 11px;
+    font-weight: 600;
+    margin-left: 6px;
+}
+
+

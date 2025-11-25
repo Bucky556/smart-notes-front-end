@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+  <link rel="stylesheet" href="./css/note-edit.css">
+  <link rel="stylesheet" href="./css/pop-up.css">
+  <link rel="stylesheet" href="./css/global.css">
+    <title>Note Edit</title>
+</head>
+<body>
+
+<!-- Popup Container -->
+<div id="popup-container"></div>
+
+
+<section class="edit-note-container">
+  <button class="back-btn" id="backBtn">← Back</button>
+
+  <h1>Edit Note</h1>
+  <form id="editNoteForm">
+    <label for="title">Title</label>
+    <input type="text" id="title" required>
+
+    <label for="content">Content</label>
+    <textarea id="content" required></textarea>
+
+    <label for="reminder">Reminder Date</label>
+    <input type="datetime-local" id="reminder">
+
+    <label>
+      <input type="checkbox" id="favorite"> Favorite
+    </label>
+
+    <button type="submit">Update Note</button>
+  </form>
+</section>
+
+<script src="./js/note-edit.js"></script>
+<script src="./js/pop-up.js"></script>
+
+</body>
+</html>
