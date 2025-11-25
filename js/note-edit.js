@@ -25,7 +25,7 @@ window.addEventListener("DOMContentLoaded", function () {
     const favoriteCheckbox = document.getElementById("favorite");
     const form = document.getElementById("editNoteForm");
 
-    fetch(`http://localhost:8080/note/api/v1/by/id/${noteId}`, {
+    fetch(`http://localhost:8080/note/api/v1/${noteId}`, {
         method: "GET",
         headers: {
             'Content-Type': 'application/json',
