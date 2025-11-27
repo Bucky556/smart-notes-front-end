@@ -1,19 +1,13 @@
-document.addEventListener("DOMContentLoaded", () => {
-    const form = document.getElementById("createNoteForm");
-    form.addEventListener("submit", (e) => {
-        e.preventDefault();
-        createNote();
-    });
-});
+import APIConfig from "./APIConfig.js";
 
-
+window.createNote = createNote;
 function createNote(e) {
     e.preventDefault();
     const title = document.getElementById("noteTitle").value;
     const content = document.getElementById("noteContent").value;
     let reminder = document.getElementById("reminderDate").value;
     if (reminder) {
-        reminder = reminder + ":00"; // LocalDateTime formatiga moslashtirish
+        reminder = reminder + ":00"; // format to LocalDateTime
     }
 
     if (!title || !content) {
@@ -37,7 +31,7 @@ function createNote(e) {
         return;
     }
 
-    fetch("http://localhost:8080/note/api/v1/create", {
+    fetch(APIConfig.API + "/note/create", {
         method: 'POST',
         headers: {
             'Authorization': 'Bearer ' + jwt,

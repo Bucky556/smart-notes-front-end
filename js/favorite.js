@@ -26,7 +26,7 @@ function getFavoriteNotes() {
         window.location.href = "./login.html";
     }
 
-    fetch("http://localhost:8080/note/api/v1/favourites?page=" + currentPage + "&size=" + pageSize, {
+    fetch("http://localhost:8080/api/v1/note/favourites?page=" + currentPage + "&size=" + pageSize, {
         method: 'GET',
         headers: {
             'Authorization': 'Bearer ' + jwt,
@@ -137,7 +137,7 @@ function changeFav(noteId, favBtn1) {
     const isFavorite = favBtn1.classList.contains('active'); // hozir favorite bo‘lsa
     const newFavorite = !isFavorite; // backendga yuboriladigan yangi qiymat
 
-    fetch(`http://localhost:8080/note/api/v1/update/favorite/${noteId}`, {
+    fetch(`http://localhost:8080/api/v1/note/update/favorite/${noteId}`, {
         method: 'PUT',
         headers: {
             'Authorization': 'Bearer ' + jwt,

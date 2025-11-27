@@ -44,7 +44,7 @@ function getNoteList(isSearch = false) {
         "query": notesQuery
     }
 
-    fetch("http://localhost:8080/note/api/v1/filter?page="+ currentPage + "&size=" + pageSize, {
+    fetch("http://localhost:8080/api/v1/note/filter?page="+ currentPage + "&size=" + pageSize, {
         method: 'POST',
         headers: {
             'Authorization': 'Bearer ' + jwt,
@@ -157,7 +157,7 @@ function deleteNote(noteId) {
         window.location.href = "./login.html";
     }
 
-    fetch("http://localhost:8080/note/api/v1/delete/" + noteId, {
+    fetch("http://localhost:8080/api/v1/note/delete/" + noteId, {
         method: "DELETE",
         headers: {
             "Authorization": "Bearer " + jwt
@@ -189,7 +189,7 @@ function changeFav(noteId, favBtn) {
     const isFavorite = favBtn.classList.contains('active');
     const newFavorite = !isFavorite;
 
-    fetch(`http://localhost:8080/note/api/v1/update/favorite/${noteId}`, {
+    fetch(`http://localhost:8080/api/v1/note/update/favorite/${noteId}`, {
         method: 'PUT',
         headers: {
             'Authorization': 'Bearer ' + jwt,

@@ -25,7 +25,7 @@ window.addEventListener("DOMContentLoaded", function () {
     const favoriteCheckbox = document.getElementById("favorite");
     const form = document.getElementById("editNoteForm");
 
-    fetch(`http://localhost:8080/note/api/v1/${noteId}`, {
+    fetch(`http://localhost:8080/api/v1/note/${noteId}`, {
         method: "GET",
         headers: {
             'Content-Type': 'application/json',
@@ -58,7 +58,7 @@ window.addEventListener("DOMContentLoaded", function () {
             favorite: favoriteCheckbox.checked
         };
 
-        fetch('http://localhost:8080/note/api/v1/update/' + noteId, {
+        fetch('http://localhost:8080/api/v1/note/update/' + noteId, {
             method: "PUT",
             headers: {
                 'Content-Type': 'application/json',
