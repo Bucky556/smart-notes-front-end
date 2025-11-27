@@ -14,7 +14,7 @@ function verifyCode(event) {
         return;
     }
 
-    fetch("http://localhost:8080/auth/api/v1/register/email/verification", {
+    fetch("http://localhost:8080/api/v1/auth/register/email/verification", {
         method: "POST",
         headers: {
             "Content-Type": "application/json"
@@ -52,7 +52,7 @@ function resendCode(event) {
         email: email
     }
 
-    fetch("http://localhost:8080/auth/api/v1/register/email/verification/resend", {
+    fetch("http://localhost:8080/api/v1/auth/register/email/verification/resend", {
         method: "POST",
         headers: {
             "Content-Type": "application/json"

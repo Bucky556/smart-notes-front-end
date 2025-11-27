@@ -7,7 +7,7 @@ function sendResetCode(event) {
         email: email
     }
 
-    fetch("http://localhost:8080/auth/api/v1/reset/password", {
+    fetch("http://localhost:8080/api/v1/auth/reset/password", {
         method: "POST",
         headers: {
             "Content-Type": "application/json"

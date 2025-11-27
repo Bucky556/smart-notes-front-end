@@ -25,7 +25,7 @@ function resetPasswordConfirm(event) {
         return;
     }
 
-    fetch("http://localhost:8080/auth/api/v1/reset/password/confirm", {
+    fetch("http://localhost:8080/api/v1/auth/reset/password/confirm", {
         method: "POST",
         headers: {
             "Content-Type": "application/json"

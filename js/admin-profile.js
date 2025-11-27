@@ -1,3 +1,5 @@
+import APIConfig from "./APIConfig.js";
+
 let currentPage = 1;
 let pageSize = 10;
 let totalPages = 1;
@@ -30,7 +32,7 @@ window.addEventListener("DOMContentLoaded", function () {
 
 });
 
-
+window.getProfileList = getProfileList;
 function getProfileList(isSearch = false) {
     const profileQuery = document.getElementById("searchNameEmail").value.trim();
     if (isSearch && !profileQuery) {
@@ -48,7 +50,7 @@ function getProfileList(isSearch = false) {
         "query": profileQuery
     }
 
-    fetch("http://localhost:8080/api/v1/profile/admin/filter?page=" + currentPage + "&size=" + pageSize, {
+    fetch(APIConfig.API + "/profile/admin/filter?page=" + currentPage + "&size=" + pageSize, {
         method: "POST",
         headers: {
             "Content-Type": "application/json",
@@ -145,11 +147,7 @@ function showProfileList(profileList) {
         })
 }
 
-function getProfile() {
-    currentPage = 1;
-    getProfileList(true);
-}
-
+window.changeStatus = changeStatus;
 function changeStatus(profileId, status) {
     if (!confirm("Are you sure you want to change status?")) {
         return;
@@ -166,7 +164,7 @@ function changeStatus(profileId, status) {
         "status": status
     }
 
-    fetch('http://localhost:8080/api/v1/profile/admin/change/status/' + profileId, {
+    fetch(APIConfig.API + '/profile/admin/change/status/' + profileId, {
         method: "PUT",
         headers: {
             "Content-Type": "application/json",
@@ -188,6 +186,7 @@ function changeStatus(profileId, status) {
     })
 }
 
+window.deleteProfile = deleteProfile;
 function deleteProfile(profileId) {
     if (!confirm("Are you sure you want to delete this profile?")) {
         return;
@@ -200,7 +199,7 @@ function deleteProfile(profileId) {
         return;
     }
 
-    fetch('http://localhost:8080/api/v1/profile/admin/delete/' + profileId, {
+    fetch(APIConfig.API + '/profile/admin/delete/' + profileId, {
         method: "DELETE",
         headers: {
             "Content-Type": "application/json",

@@ -27,7 +27,7 @@ document.getElementById("registration_form")
             confirmPassword: confirmPassword,
         }
 
-        fetch("http://localhost:8080/auth/api/v1/register", {
+        fetch("http://localhost:8080/api/v1/auth/register", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json"
