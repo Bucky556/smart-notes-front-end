@@ -1,3 +1,5 @@
+import APIConfig from "./APIConfig.js";
+
 document.getElementById("registration_form")
     .addEventListener("submit", (event) => {
         event.preventDefault();
@@ -27,7 +29,7 @@ document.getElementById("registration_form")
             confirmPassword: confirmPassword,
         }
 
-        fetch("http://localhost:8080/api/v1/auth/register", {
+        fetch(APIConfig.API + "/auth/register", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json"

@@ -1,3 +1,5 @@
+import APIConfig from "./APIConfig.js";
+
 window.addEventListener("DOMContentLoaded", function () {
     document.getElementById("backBtn").addEventListener("click", () => {
         window.location.href = "./myNotes.html";
@@ -25,7 +27,7 @@ window.addEventListener("DOMContentLoaded", function () {
     const favoriteCheckbox = document.getElementById("favorite");
     const form = document.getElementById("editNoteForm");
 
-    fetch(`http://localhost:8080/api/v1/note/${noteId}`, {
+    fetch(APIConfig.API + `/note/${noteId}`, {
         method: "GET",
         headers: {
             'Content-Type': 'application/json',
@@ -58,7 +60,7 @@ window.addEventListener("DOMContentLoaded", function () {
             favorite: favoriteCheckbox.checked
         };
 
-        fetch('http://localhost:8080/api/v1/note/update/' + noteId, {
+        fetch(APIConfig.API + '/note/update/' + noteId, {
             method: "PUT",
             headers: {
                 'Content-Type': 'application/json',

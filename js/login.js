@@ -1,3 +1,6 @@
+import APIConfig from "./APIConfig.js";
+
+window.login = login;
 function login(event) {
     event.preventDefault();
 
@@ -35,7 +38,7 @@ function login(event) {
         password: password
     }
 
-    fetch("http://localhost:8080/api/v1/auth/login", {
+    fetch(APIConfig.API + "/auth/login", {
         method: "POST",
         headers: {
             "Content-Type": "application/json"
@@ -64,12 +67,12 @@ function login(event) {
             let errorText = "Something went wrong, please try again.";
 
             try {
-                const errData = await error.json(); // backenddan JSON olamiz
+                const errData = await error.json(); // get JSON from backend
                 if (errData && errData.message) {
                     errorText = errData.message;
                 }
             } catch (e) {
-                // agar json bo'lmasa default message ishlatiladi
+                // returns a default message if JSON empty
             }
 
             if (errorText.includes("or")) {

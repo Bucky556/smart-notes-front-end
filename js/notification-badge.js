@@ -1,3 +1,5 @@
+import APIConfig from "./APIConfig.js";
+
 document.addEventListener("DOMContentLoaded", () => {
 
     getNotification();
@@ -13,7 +15,7 @@ function getNotification() {
         return;
     }
 
-    fetch("http://localhost:8080/api/v1/notification", {
+    fetch(APIConfig.API + "/notification", {
         method: 'GET',
         headers: {
             'Authorization': 'Bearer ' + jwt,

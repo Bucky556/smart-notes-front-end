@@ -1,3 +1,5 @@
+import APIConfig from "./APIConfig.js";
+
 window.addEventListener("DOMContentLoaded", function () {
     const url = new URL(window.location.href);  // www.com.?id=1321123
     const id = url.searchParams.get("id");
@@ -15,6 +17,8 @@ window.addEventListener("DOMContentLoaded", function () {
     }
 });
 
+window.getNoteById = getNoteById;
+
 function getNoteById(id) {
     const jwt = localStorage.getItem("jwtToken");
     if (!jwt) {
@@ -22,7 +26,7 @@ function getNoteById(id) {
         window.location.href = "./login.html";
     }
 
-    fetch("http://localhost:8080/api/v1/note/" + id, {
+    fetch(APIConfig.API + "/note/" + id, {
         method: 'GET',
         headers: {
             'Content-Type': 'application/json',

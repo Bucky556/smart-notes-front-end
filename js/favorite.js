@@ -1,3 +1,5 @@
+import APIConfig from "./APIConfig.js";
+
 let currentPage = 1;
 let pageSize = 5;
 let totalPages = 1;
@@ -19,6 +21,7 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 });
 
+window.getFavoriteNotes = getFavoriteNotes;
 function getFavoriteNotes() {
     const jwt = localStorage.getItem("jwtToken");
     if (!jwt) {
@@ -26,7 +29,7 @@ function getFavoriteNotes() {
         window.location.href = "./login.html";
     }
 
-    fetch("http://localhost:8080/api/v1/note/favourites?page=" + currentPage + "&size=" + pageSize, {
+    fetch(APIConfig.API + "/note/favourites?page=" + currentPage + "&size=" + pageSize, {
         method: 'GET',
         headers: {
             'Authorization': 'Bearer ' + jwt,
@@ -125,6 +128,7 @@ function showFavorites(data) {
     });
 }
 
+window.changeFav = changeFav;
 function changeFav(noteId, favBtn1) {
     const jwt = localStorage.getItem("jwtToken");
     if (!jwt) {
@@ -133,11 +137,11 @@ function changeFav(noteId, favBtn1) {
         return;
     }
 
-    // Toggle favorite state (agar frontendda note object bo‘lsa uni ham o‘zgartirish mumkin)
+    // Toggle favorite state
     const isFavorite = favBtn1.classList.contains('active'); // hozir favorite bo‘lsa
     const newFavorite = !isFavorite; // backendga yuboriladigan yangi qiymat
 
-    fetch(`http://localhost:8080/api/v1/note/update/favorite/${noteId}`, {
+    fetch( APIConfig.API + `/note/update/favorite/${noteId}`, {
         method: 'PUT',
         headers: {
             'Authorization': 'Bearer ' + jwt,
@@ -153,7 +157,7 @@ function changeFav(noteId, favBtn1) {
             }
         })
         .then(data => {
-            // Tugma rangini yangilash
+            // Change button color
             favBtn1.classList.toggle('active', newFavorite);
 
             // animation of changing favoriteButton

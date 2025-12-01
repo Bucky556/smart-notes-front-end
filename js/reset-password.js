@@ -1,3 +1,6 @@
+import APIConfig from "./APIConfig.js";
+
+window.sendResetCode = sendResetCode;
 function sendResetCode(event) {
     event.preventDefault();
 
@@ -7,7 +10,7 @@ function sendResetCode(event) {
         email: email
     }
 
-    fetch("http://localhost:8080/api/v1/auth/reset/password", {
+    fetch(APIConfig.API + "/auth/reset/password", {
         method: "POST",
         headers: {
             "Content-Type": "application/json"

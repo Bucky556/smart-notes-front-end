@@ -1,7 +1,10 @@
+import APIConfig from "./APIConfig.js";
+
 document.addEventListener("DOMContentLoaded", () => {
     getNotifications();
 });
 
+window.getNotifications = getNotifications;
 function getNotifications() {
     const jwt = localStorage.getItem("jwtToken");
     if (!jwt) {
@@ -10,7 +13,7 @@ function getNotifications() {
         return;
     }
 
-    fetch("http://localhost:8080/api/v1/notification", {
+    fetch(APIConfig.API + "/notification", {
         method: 'GET',
         headers: {
             'Authorization': 'Bearer ' + jwt,
@@ -72,6 +75,7 @@ function showNotifications(data) {
     })
 }
 
+window.deleteNotification = deleteNotification;
 function deleteNotification(notifId) {
     const jwt = localStorage.getItem("jwtToken");
     if (!jwt) {
@@ -80,7 +84,7 @@ function deleteNotification(notifId) {
         return;
     }
 
-    fetch("http://localhost:8080/api/v1/notification/" + notifId, {
+    fetch(APIConfig.API + "/notification/" + notifId, {
         method: "DELETE",
         headers: {
             "Authorization": "Bearer " + jwt

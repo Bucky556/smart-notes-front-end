@@ -1,3 +1,5 @@
+import APIConfig from "./APIConfig.js";
+
 window.addEventListener("DOMContentLoaded", function () {
     document.getElementById("backBtn").addEventListener("click", () => {
         window.location.href = "./myNotes.html";
@@ -15,10 +17,12 @@ window.addEventListener("DOMContentLoaded", function () {
     }
 })
 
+window.triggerFileInput = triggerFileInput;
 function triggerFileInput() {
     document.getElementById("photoInput").click();
 }
 
+window.previewImage = previewImage;
 function previewImage(event) {
     const file = event.target.files[0];
     const reader = new FileReader();
@@ -34,6 +38,7 @@ function previewImage(event) {
     }
 }
 
+window.uploadImage = uploadImage;
 function uploadImage() {
     const fileInput = document.getElementById('photoInput');
     const file = fileInput.files[0];
@@ -48,7 +53,7 @@ function uploadImage() {
             return;
         }
 
-        fetch('http://localhost:8080/api/v1/attach/upload', {
+        fetch(APIConfig.API + '/attach/upload', {
             method: 'POST',
             headers: {
                 'Authorization': 'Bearer ' + jwt
@@ -70,7 +75,7 @@ function uploadImage() {
                         if (userDetailsJson) {
                             const userDetailsObj = JSON.parse(userDetailsJson);
                             // update photo object
-                            userDetailsObj.photo = {
+                            userDetailsObj.photoId = {
                                 id: data.id,
                                 url: data.url
                             };
@@ -91,6 +96,7 @@ function uploadImage() {
     }
 }
 
+window.updateProfileImage = updateProfileImage;
 function updateProfileImage(photoId) {
     const photoMessage = document.getElementById("photoMessage")
     if (!photoId) {
@@ -108,7 +114,7 @@ function updateProfileImage(photoId) {
         "photoId": photoId,
     }
 
-    fetch('http://localhost:8080/api/v1/profile/update/photo', {
+    fetch(APIConfig.API + '/profile/update/photo', {
         method: 'PUT',
         headers: {
             'Content-Type': 'application/json',
@@ -136,15 +142,15 @@ function updateProfileImage(photoId) {
                 if (userDetailsJson) {
                     const userDetailsObj = JSON.parse(userDetailsJson);
                     // update photo object
-                    userDetailsObj.photo = {
+                    userDetailsObj.photoId = {
                         id: photoId,
-                        url: `http://localhost:8080/api/v1/attach/open/${photoId}`,
+                        url: APIConfig.API + `/attach/open/${photoId}`,
                     };
                     // save a new object of photoId
                     localStorage.setItem("userDetails", JSON.stringify(userDetailsObj));
 
                     document.querySelectorAll(".userPhoto").forEach(img => {
-                        img.src = `http://localhost:8080/api/v1/attach/open/${photoId}`;
+                        img.src = APIConfig.API + `/attach/open/${photoId}`;
                     });
 
                     setTimeout(() => {
@@ -159,6 +165,7 @@ function updateProfileImage(photoId) {
         });
 }
 
+window.updateName = updateName;
 function updateName() {
     const name = document.getElementById("nameInput").value
     if (!name) {
@@ -180,7 +187,7 @@ function updateName() {
         "name": name
     }
 
-    fetch('http://localhost:8080/api/v1/profile/update/name', {
+    fetch(APIConfig.API + '/profile/update/name', {
         method: "PUT",
         headers: {
             "Content-Type": "application/json",
@@ -217,6 +224,7 @@ function updateName() {
         })
 }
 
+window.updatePassword = updatePassword;
 function updatePassword() {
     const currentPswd = document.getElementById("oldPassword").value;
     const newPswd = document.getElementById("newPassword").value;
@@ -243,7 +251,7 @@ function updatePassword() {
         window.location.href = "./login.html"
     }
 
-    fetch('http://localhost:8080/api/v1/profile/update/password', {
+    fetch(APIConfig.API + '/profile/update/password', {
         method: "PUT",
         headers: {
             "Content-Type": "application/json",
@@ -290,6 +298,7 @@ function updatePassword() {
         });
 }
 
+window.updateUsername = updateUsername;
 function updateUsername() {
     const username = document.getElementById("usernameInput").value
     const errorUsernameMessage = document.getElementById("ErrorUsernameMessageSpan");
@@ -308,7 +317,7 @@ function updateUsername() {
         window.location.href = './login.html';
     }
 
-    fetch('http://localhost:8080/api/v1/profile/update/username', {
+    fetch(APIConfig.API + '/profile/update/username', {
         method: "PUT",
         headers: {
             "Content-Type": "application/json",
@@ -347,6 +356,7 @@ function updateUsername() {
         });
 }
 
+window.updateUsernameConfirm = updateUsernameConfirm;
 function updateUsernameConfirm() {
     const confirmCode = document.getElementById("profileUserNameChaneConfirmInputId").value
     const errorCodeMessage = document.getElementById("ErrorCodeSpan");
@@ -368,7 +378,7 @@ function updateUsernameConfirm() {
         window.location.href = './login.html';
     }
 
-    fetch('http://localhost:8080/api/v1/profile/update/username/confirm', {
+    fetch(APIConfig.API + '/profile/update/username/confirm', {
         method: "PUT",
         headers: {
             "Content-Type": "application/json",

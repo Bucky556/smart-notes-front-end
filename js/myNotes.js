@@ -1,3 +1,5 @@
+import APIConfig from "./APIConfig.js";
+
 let currentPage = 1;
 let pageSize = 9;
 let totalPages = 1;
@@ -28,6 +30,7 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 });
 
+window.getNoteList = getNoteList;
 function getNoteList(isSearch = false) {
     const notesQuery = document.getElementById("searchTitle").value.trim();
     if (isSearch && !notesQuery) {
@@ -44,7 +47,7 @@ function getNoteList(isSearch = false) {
         "query": notesQuery
     }
 
-    fetch("http://localhost:8080/api/v1/note/filter?page="+ currentPage + "&size=" + pageSize, {
+    fetch(APIConfig.API + "/note/filter?page="+ currentPage + "&size=" + pageSize, {
         method: 'POST',
         headers: {
             'Authorization': 'Bearer ' + jwt,
@@ -141,11 +144,13 @@ function showNoteList(data) {
     });
 }
 
+window.getNote = getNote;
 function getNote(){
     currentPage = 1;
     getNoteList(true);
 }
 
+window.deleteNote = deleteNote;
 function deleteNote(noteId) {
     if (!confirm("Are you sure you want to delete this note?")) {
         return;
@@ -157,7 +162,7 @@ function deleteNote(noteId) {
         window.location.href = "./login.html";
     }
 
-    fetch("http://localhost:8080/api/v1/note/delete/" + noteId, {
+    fetch(APIConfig.API + "/note/delete/" + noteId, {
         method: "DELETE",
         headers: {
             "Authorization": "Bearer " + jwt
@@ -177,6 +182,7 @@ function deleteNote(noteId) {
     })
 }
 
+window.changeFav = changeFav;
 function changeFav(noteId, favBtn) {
     const jwt = localStorage.getItem("jwtToken");
     if (!jwt) {
@@ -189,7 +195,7 @@ function changeFav(noteId, favBtn) {
     const isFavorite = favBtn.classList.contains('active');
     const newFavorite = !isFavorite;
 
-    fetch(`http://localhost:8080/api/v1/note/update/favorite/${noteId}`, {
+    fetch(APIConfig.API + `/note/update/favorite/${noteId}`, {
         method: 'PUT',
         headers: {
             'Authorization': 'Bearer ' + jwt,

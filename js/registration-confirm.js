@@ -1,3 +1,8 @@
+import APIConfig from "./APIConfig.js";
+
+document.getElementById("verify_form").addEventListener("submit", verifyCode);
+
+window.verifyCode = verifyCode;
 function verifyCode(event) {
     event.preventDefault(); // form submit-ni to‘xtatadi
 
@@ -14,7 +19,7 @@ function verifyCode(event) {
         return;
     }
 
-    fetch("http://localhost:8080/api/v1/auth/register/email/verification", {
+    fetch(APIConfig.API + "/auth/register/email/verification", {
         method: "POST",
         headers: {
             "Content-Type": "application/json"
@@ -43,6 +48,7 @@ function verifyCode(event) {
         })
 }
 
+window.resendCode = resendCode;
 function resendCode(event) {
     event.preventDefault();
 
@@ -52,7 +58,7 @@ function resendCode(event) {
         email: email
     }
 
-    fetch("http://localhost:8080/api/v1/auth/register/email/verification/resend", {
+    fetch(APIConfig.API + "/auth/register/email/verification/resend", {
         method: "POST",
         headers: {
             "Content-Type": "application/json"

@@ -1,3 +1,5 @@
+import APIConfig from "./APIConfig.js";
+
 window.addEventListener("DOMContentLoaded", () => {
     const popupMessage = localStorage.getItem("Pop-up");
     if (popupMessage) {
@@ -6,7 +8,7 @@ window.addEventListener("DOMContentLoaded", () => {
     }
 });
 
-
+window.resetPasswordConfirm = resetPasswordConfirm;
 function resetPasswordConfirm(event) {
     event.preventDefault();
 
@@ -25,7 +27,7 @@ function resetPasswordConfirm(event) {
         return;
     }
 
-    fetch("http://localhost:8080/api/v1/auth/reset/password/confirm", {
+    fetch(APIConfig.API + "/auth/reset/password/confirm", {
         method: "POST",
         headers: {
             "Content-Type": "application/json"
